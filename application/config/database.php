@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'ideapmsdb',
+	'hostname' => '72.60.233.51',
+	'username' => 'righdevs',
+	'password' => '#Rightech777#',
+	'database' => 'live_proj_portal',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
