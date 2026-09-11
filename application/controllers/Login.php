@@ -147,5 +147,27 @@ class Login extends CI_Controller {
 		redirect(site_url("login"));
 	}
 	
+	public function test_database()
+	{
+		$this->output->enable_profiler(false);
+
+		$query = $this->db->query("
+			SELECT
+				DATABASE() AS database_name,
+				CURRENT_USER() AS authenticated_user,
+				VERSION() AS mysql_version,
+				NOW() AS server_time
+		");
+
+		if ($query === false) {
+			echo '<pre>';
+			print_r($this->db->error());
+			exit;
+		}
+
+		echo '<pre>';
+		print_r($query->row_array());
+		exit;
+}
 	
 }
