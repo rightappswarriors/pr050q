@@ -38,16 +38,12 @@ class Login extends CI_Controller {
 		$this->form_validation->set_rules('newpassword', 'New Password', 'trim|required|min_length[8]|alpha_numeric|callback_password_check');
 		
 		if ($this->form_validation->run() == TRUE) 
-		{
-			
-			$data = array(
-				'password' => md5($this->input->post('newpassword'))
-			);
+		{			
+			$data = array('password' => md5($this->input->post('newpassword')));
 			
 			$this->login_model->update_password($this->session->userdata('pms_userid'),$data);
 			$this->session->set_flashdata('update_status','<div class="alert alert-success">Successfully updated!</div>');
 			redirect('login/changepass','refresh');
-			
 			
 		}else{
 			
@@ -120,7 +116,6 @@ class Login extends CI_Controller {
 				$error=1;
 				
 			}
-
 			
 		}else{
 			
