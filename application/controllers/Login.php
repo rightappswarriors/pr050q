@@ -84,12 +84,10 @@ class Login extends CI_Controller {
 					'pms_lastlogin'  => date("Y-m-d H:i:s",strtotime($row->lastlogin)),
 					'pms_logsintoday'  => $logsintoday
 				);			
-				print_r($newdata );
 				
 				// UPDATE LASTLOGIN
 				$data = array('lastlogin' => $logsintoday);
 				$this->login_model->user_update($row->id,$data);
-				var_dump("user_update");
 				
 				// INSERT History Log
 				$datalog = array(
@@ -98,13 +96,13 @@ class Login extends CI_Controller {
 					'dateadded' => date("Y-m-d H:i:s")
 				);
 				$this->historylog_model->insert($datalog);
-				var_dump("historylog_model->insert");
 				
 				if(!$row->usertype){
 
 					var_dump("row->usertype");
 					$newdata['pms_admin'] = TRUE;
 					$this->session->set_userdata($newdata);	
+					var_dump($this->session->userdata('pms_login');
 					var_dump($this->session);
 					
 					redirect('dashboard','refresh');
