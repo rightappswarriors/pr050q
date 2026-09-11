@@ -29,6 +29,7 @@ class Dashboard extends CI_Controller {
 		$data['accounting']=$this->dashboard_model->count_accounting();
 		$data['users']=$this->dashboard_model->count_users();
 		$data['page_title']="Dashboard";
+		
 		$this->load->view('dashboard',$data);
 	}
 	

@@ -98,8 +98,10 @@ class Login extends CI_Controller {
 				$this->historylog_model->insert($datalog);
 				
 				if(!$row->usertype){
+					var_dump("!row->usertype");
 					$newdata['pms_admin'] = TRUE;
 					$this->session->set_userdata($newdata);	
+					var_dump($this->session);
 					
 					redirect('dashboard','refresh');
 					
