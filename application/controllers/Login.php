@@ -66,6 +66,7 @@ class Login extends CI_Controller {
 
 			if($login->num_rows()>0){
 				
+				var_dump("login->num_rows");
 				// create sessions...
 				$row=$login->row();
 				
@@ -83,10 +84,12 @@ class Login extends CI_Controller {
 					'pms_lastlogin'  => date("Y-m-d H:i:s",strtotime($row->lastlogin)),
 					'pms_logsintoday'  => $logsintoday
 				);			
+				print_r($newdata );
 				
 				// UPDATE LASTLOGIN
 				$data = array('lastlogin' => $logsintoday);
 				$this->login_model->user_update($row->id,$data);
+				var_dump("user_update");
 				
 				// INSERT History Log
 				$datalog = array(
@@ -94,9 +97,11 @@ class Login extends CI_Controller {
 					'description' => $username." just logs in.",
 					'dateadded' => date("Y-m-d H:i:s")
 				);
-				//$this->historylog_model->insert($datalog);
+				$this->historylog_model->insert($datalog);
+				var_dump("historylog_model->insert");
 				
 				if(!$row->usertype){
+
 					$newdata['pms_admin'] = TRUE;
 					$this->session->set_userdata($newdata);	
 					redirect('dashboard','refresh');
