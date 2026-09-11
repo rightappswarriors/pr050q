@@ -70,6 +70,7 @@ class Login extends CI_Controller {
 			$password = $this->input->post('password');
 
 			$login=$this->login_model->check_login($username,$password);
+			var_dump($login);
 			var_dump($login); die(); exit;
 			
 			/*if($login->num_rows()>0){
