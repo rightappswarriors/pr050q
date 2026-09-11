@@ -75,7 +75,7 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => '72.60.233.51',
+	'hostname' => '72.60.233.51:3310',
 	'username' => 'righdevs',
 	'password' => '#Rightech777#',
 	'database' => 'live_proj_portal',

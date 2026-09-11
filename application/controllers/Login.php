@@ -69,8 +69,9 @@ class Login extends CI_Controller {
 			$password = $this->input->post('password');
 
 			$login=$this->login_model->check_login($username,$password);
-
-			if($login->num_rows()>0){
+			var_dump($login); die(); exit;
+			
+			/*if($login->num_rows()>0){
 				
 				// create sessions...
 				$row=$login->row();
@@ -134,7 +135,7 @@ class Login extends CI_Controller {
 					<div class="alert alert-danger">
 					<strong><i class="dripicons-checkmark"></i> Oops!</strong> Username or password is not correct.
 				</div>');
-				$this->load->view('login');
+				$this->load->view('login'); */
 		}
 		
 	}
