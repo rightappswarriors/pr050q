@@ -94,7 +94,7 @@ class Login extends CI_Controller {
 					'description' => $username." just logs in.",
 					'dateadded' => date("Y-m-d H:i:s")
 				);
-				$this->historylog_model->insert($datalog);
+				//$this->historylog_model->insert($datalog);
 				
 				if(!$row->usertype){
 					$newdata['pms_admin'] = TRUE;
