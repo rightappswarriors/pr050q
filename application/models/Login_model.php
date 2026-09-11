@@ -15,7 +15,7 @@ class Login_model extends CI_Model {
 			$user = $query->row_array();
 			print_r($user);
 		} else {
-			echo 'No matching user.';
+			var_dump( 'No matching user.');
 		}
 		exit; die();
 		return $qry;
