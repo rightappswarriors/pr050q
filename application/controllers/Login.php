@@ -125,6 +125,7 @@ class Login extends CI_Controller {
 			$error=1;			
 		}
 		
+		exit; die();
 		if($error){
 			$this->session->set_flashdata('update_status', '
 					<div class="alert alert-danger">
