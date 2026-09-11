@@ -66,7 +66,6 @@ class Login extends CI_Controller {
 
 			if($login->num_rows()>0){
 				
-				var_dump("login->num_rows");
 				// create sessions...
 				$row=$login->row();
 				
