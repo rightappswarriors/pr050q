@@ -52,8 +52,7 @@ class Login extends CI_Controller {
 	}
 	
 	public function process()
-	{
-		
+	{		
 		$this->form_validation->set_rules('username', 'Username', 'trim|required');
 		$this->form_validation->set_rules('password', 'Password', 'trim|required');
 		$error=0;
@@ -113,14 +112,12 @@ class Login extends CI_Controller {
 				
 			}else{
 				
-				$error=1;
-				
+				$error=1;				
 			}
 			
 		}else{
 			
-			$error=1;	
-			
+			$error=1;			
 		}
 		
 		if($error){
