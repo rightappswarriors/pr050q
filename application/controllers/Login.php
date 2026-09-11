@@ -10,6 +10,7 @@ class Login extends CI_Controller {
 	
 	public function index()
 	{
+		var_dump($this->session->userdata('pms_login');
 		if($this->session->userdata('pms_login')){
 			redirect('dashboard','refresh');
 		}	
