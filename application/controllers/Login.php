@@ -147,7 +147,7 @@ class Login extends CI_Controller {
 		redirect(site_url("login"));
 	}
 	
-	public function test_database()
+	public function test_database777()
 	{
 		$this->output->enable_profiler(false);
 
@@ -168,6 +168,6 @@ class Login extends CI_Controller {
 		echo '<pre>';
 		print_r($query->row_array());
 		exit;
-}
+	}
 	
 }
