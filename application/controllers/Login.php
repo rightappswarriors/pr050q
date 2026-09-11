@@ -102,16 +102,16 @@ class Login extends CI_Controller {
 				
 				if(!$row->usertype){
 
+					var_dump("row->usertype");
 					$newdata['pms_admin'] = TRUE;
 					$this->session->set_userdata($newdata);	
-					var_dump("row->usertype");
 					var_dump($this->session);
 					
 					redirect('dashboard','refresh');
 				}else{
+					var_dump("!!!!!!row->usertype");
 					$newdata['pms_admin'] = FALSE;
-					$this->session->set_userdata($newdata);
-					var_dump("!!!!!!row->usertype");		
+					$this->session->set_userdata($newdata);		
 					var_dump($this->session);
 					
                     if($row->usertype==6){
