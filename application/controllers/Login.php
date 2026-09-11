@@ -77,6 +77,7 @@ class Login extends CI_Controller {
 					'pms_userid' => $row->id,
 					'pms_senderid'   => 'JDEN SMS',
 					'pms_login'  => TRUE,
+					'pms_admin'  => TRUE,
 					'pms_usertype'  => $row->usertype,
 					'pms_project'  => $row->project,
 					'pms_editdel'  => (($row->usertype==4)?"disabled":""),
@@ -99,7 +100,9 @@ class Login extends CI_Controller {
 				if(!$row->usertype){
 					$newdata['pms_admin'] = TRUE;
 					$this->session->set_userdata($newdata);	
+					
 					redirect('dashboard','refresh');
+					
 				}else{
 					$newdata['pms_admin'] = FALSE;
 					$this->session->set_userdata($newdata);	

@@ -8,6 +8,7 @@ class Dashboard extends CI_Controller {
 		$this->load->model('dashboard_model');
 		$this->load->model('sms_model');
 		$this->load->model('sysusers_model');
+		
 		if(!$this->session->userdata('pms_login')){
 			redirect(site_url('login'));
 		}
