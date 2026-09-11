@@ -10,7 +10,6 @@ class Login extends CI_Controller {
 	
 	public function index()
 	{
-		var_dump($this->session->userdata('pms_login');
 		if($this->session->userdata('pms_login')){
 			redirect('dashboard','refresh');
 		}	
@@ -52,8 +51,7 @@ class Login extends CI_Controller {
 			
 		}else{
 			
-			$this->load->view('changepass');
-			
+			$this->load->view('changepass');			
 		}	
 	}
 	
@@ -70,10 +68,8 @@ class Login extends CI_Controller {
 			$password = $this->input->post('password');
 
 			$login=$this->login_model->check_login($username,$password);
-			var_dump("login");
-			var_dump($login); die(); exit;
-			
-			/*if($login->num_rows()>0){
+
+			if($login->num_rows()>0){
 				
 				// create sessions...
 				$row=$login->row();
@@ -137,7 +133,7 @@ class Login extends CI_Controller {
 					<div class="alert alert-danger">
 					<strong><i class="dripicons-checkmark"></i> Oops!</strong> Username or password is not correct.
 				</div>');
-				$this->load->view('login'); */
+				$this->load->view('login');
 		}
 		
 	}
