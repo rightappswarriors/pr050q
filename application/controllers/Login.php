@@ -100,8 +100,9 @@ class Login extends CI_Controller {
 				if(!$row->usertype){
 					$newdata['pms_admin'] = TRUE;
 					$this->session->set_userdata($newdata);
-					$this->load->view('dashboard');
-					//redirect('dashboard','refresh');
+					//$this->load->view('dashboard');
+					redirect('dashboard','refresh');
+					exit;
 					
 				}else{
 					$newdata['pms_admin'] = FALSE;
