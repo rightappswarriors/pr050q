@@ -397,6 +397,7 @@ $config['sess_regenerate_destroy'] = FALSE;
 
 $config['sess_driver'] = 'files';
 $config['sess_cookie_name'] = 'ci_session';
+$config['sess_samesite'] = 'Lax';
 $config['sess_expiration'] = 7200;
 $config['sess_save_path'] = APPPATH . 'cache/sessions';
 $config['sess_match_ip'] = FALSE;
