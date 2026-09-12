@@ -132,5 +132,5 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('historylog_model','dsettings_model','titles_model');
+$autoload['model'] = array('historylog_model','dsettings_model','titles_model', 'login_model', 'dashboard_model');
 date_default_timezone_set('Asia/Manila');
